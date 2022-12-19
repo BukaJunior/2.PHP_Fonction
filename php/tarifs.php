@@ -9,6 +9,41 @@
     $tarifEnfant = 4.5;
 
 
+    // Tableau des consommations 
+    $extras = [
+      [
+        'Popcorn',
+        'L',
+        2.9
+      ],
+      [
+        'Popcorn',
+        'XL',
+        4
+      ],
+      [
+        'Chips Lays',
+        '50g',
+        2.5
+      ],
+      [
+        'M&M\'s',
+        '100g',
+        4
+      ],
+      [
+        'Soda',
+        '33cl',
+        3.2
+      ],
+      [
+        'Evian',
+        '33cl',
+        3
+      ]
+    ];
+
+
 
 ?>
 
@@ -153,13 +188,34 @@
             ?>
 
                 <li class="prices__item">
-                    <span class="prices__item-desc"><?php echo $age; ?> ans</span> <span class="prices__item-value"><?php echo $montant; ?> &euro;</span>
+                    <span class="prices__item-desc"><?php echo $age; ?> ans</span> 
+                    <span class="prices__item-value"><?php echo $montant; ?> &euro;</span>
                 </li>
 
             <?php } ?>
           </ul>
         </div>
       </div>
+                
+      <h2 class="page__title">Consommations</h2>
+      <ul>
+        <!-- On boucle sur les produits de notre tableau de consommations (le 1er niveau du tableau) -->
+        <?php for ($indexProduit = 0; $indexProduit <= 5; $indexProduit++) : ?>
+         
+          <li>
+            <?php 
+            // On récupère chaque produit successivement dans la variable $conso. Elle contient à chaque itération un tableau avec les infos du produit. 
+            // Ces infos sont toujours dans le meme ordre : index 0 = nom du produit, index 1 = contenance et index 2 = prix
+            $conso = $extras[$indexProduit]; ?>
+            <span class="prices__item-desc"><?= $conso[0] ?></span>
+            <span class="prices__item-desc"><?= $conso[1] ?></span>
+            <span class="prices__item-value"><?= $conso[2] ?> €</span>
+          </li>
+        
+        <?php endfor; ?>      
+
+
+      </ul>
 
 
 
