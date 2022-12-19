@@ -140,6 +140,11 @@ body {
   width: 170px;
 }
 
+.prices__item-value--small {
+  width: 120px;
+  display: inline-block;
+}
+
 .prices__description-name {
   font-weight: bold;
 }

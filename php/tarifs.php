@@ -43,6 +43,15 @@
       ]
     ];
 
+    // Tableau associant les noms des tarifs et leurs valeurs
+    // Dans un tableau associatif chaque clé est définie par nous-memes et doit etre unique
+    $tarifs = [
+      "Tarif Plein" => 8.3,
+      "Tarif Réduit" => 6.8,
+      "Tarif Enfant" => 4.5,
+      "Tarif Etudiant" => 4,
+      "Supplément 3D" => 1,
+    ];
 
 
 ?>
@@ -55,18 +64,15 @@
             A l'unité
           </h3>
           <ul>
-            <li class="prices__item">
-              <span class="prices__item-desc">Tarif Plein</span> <span class="prices__item-value">8,30 &euro;</span>
-            </li>
-            <li class="prices__item">
-              <span class="prices__item-desc">Tarif Réduit</span> <span class="prices__item-value">6,80 &euro;</span>
-            </li>
-            <li class="prices__item">
-              <span class="prices__item-desc">Tarif Enfant</span> <span class="prices__item-value">4,50 &euro;</span>
-            </li>
-            <li class="prices__item">
-              <span class="prices__item-desc">Supplément 3D</span> <span class="prices__item-value">1,00 &euro;</span>
-            </li>
+
+            <?php foreach ($tarifs as $nomTarif => $montantTarif) : ?>
+             
+              <li class="prices__item">
+                <span class="prices__item-desc"><?= $nomTarif ?></span> 
+                <span class="prices__item-value--small"><?= $montantTarif ?> &euro;</span>
+              </li>
+
+            <?php endforeach; ?>
           </ul>
         </div>
 
@@ -188,7 +194,6 @@
                 
                 // On calcule le montant de l'abonnement avant réduction : prix de la place * 5
                 $montantAbonnement = $montant * 5;
-
                 // Pour calculer la réduction, on doit d'abord vérifier si on est sur un client de moins de 25 ans
                 if ($age < 25) {
                   // Si c'est le cas, on retire 20% au total
@@ -201,7 +206,7 @@
 
                 // On utilise la variable pourcentageReduction créée juste avant pour faire notre calcul
                 $montantReduction = $montantAbonnement * $pourcentageReduction / 100;
-
+                   
                 // On retire au montant de l'abonnement le montant de réduction calculé
                 $montantAbonnementAvecReduction = $montantAbonnement -  $montantReduction;
                 // Version raccourcie : 
@@ -249,5 +254,4 @@
 
     // Include permet dire à PHP "Colle le contenu du fichier footer à cet endroit"
     include "templates/footer.tpl.php";
-
 ?>
