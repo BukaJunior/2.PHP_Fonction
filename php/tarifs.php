@@ -53,7 +53,12 @@
       "Supplément 3D" => 1,
     ];
 
-
+    // Tableau contenant les abonnements
+    $abonnements = [
+      '5 places' => "-10%",
+      '5 places -25ans' => "-20%",
+      '5 places +60ans' => "-40%"
+    ];
 ?>
 
 <h2 class="page__title">Tarifs</h2>
@@ -65,7 +70,9 @@
           </h3>
           <ul>
 
-            <?php foreach ($tarifs as $nomTarif => $montantTarif) : ?>
+            <?php 
+            // Foreach permet de parcourir un tableau et à chaque itération de ranger la clé dans une première variable et la valeur de l'entrée dans une seconde variable.
+            foreach ($tarifs as $nomTarif => $montantTarif) : ?>
              
               <li class="prices__item">
                 <span class="prices__item-desc"><?= $nomTarif ?></span> 
@@ -81,12 +88,16 @@
             Abonnement
           </h3>
           <ul>
-            <li class="prices__item">
-              <span class="prices__item-desc">5 places</span> <span class="prices__item-value">-10%</span>
-            </li>
-            <li class="prices__item">
-              <span class="prices__item-desc">5 places -25ans </span> <span class="prices__item-value">-20%</span>
-            </li>
+
+            <?php foreach ($abonnements as $nomAbonnement => $reduction) : ?>
+           
+              <li class="prices__item">
+                <span class="prices__item-desc"><?= $nomAbonnement ?></span> <span class="prices__item-value"><?= $reduction ?></span>
+              </li>
+
+            <?php endforeach ?>
+
+
           </ul>
         </div>
       </div>
