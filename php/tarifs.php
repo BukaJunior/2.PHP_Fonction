@@ -157,7 +157,9 @@
       <div class="prices">
         <div class="prices__list">
           <h3 class="prices__list-title">
-            <span class="prices__item-desc">Age</span> <span class="prices__item-value">Tarif unitaire</span>
+            <span class="prices__item-desc">Age</span> 
+            <span class="prices__item-value">Tarif unitaire</span> 
+            <span class="prices__item-value">Tarif Abonnement</span> 
           </h3>
           <ul>
             
@@ -184,12 +186,35 @@
                     $montant = $tarifPlein;
                 }
                 
+                // On calcule le montant de l'abonnement avant réduction : prix de la place * 5
+                $montantAbonnement = $montant * 5;
+
+                // Pour calculer la réduction, on doit d'abord vérifier si on est sur un client de moins de 25 ans
+                if ($age < 25) {
+                  // Si c'est le cas, on retire 20% au total
+                  $pourcentageReduction = 20; 
+
+                } else {
+                  // Sinon on retire 10%
+                  $pourcentageReduction = 10;
+                }
+
+                // On utilise la variable pourcentageReduction créée juste avant pour faire notre calcul
+                $montantReduction = $montantAbonnement * $pourcentageReduction / 100;
+
+                // On retire au montant de l'abonnement le montant de réduction calculé
+                $montantAbonnementAvecReduction = $montantAbonnement -  $montantReduction;
+                // Version raccourcie : 
+                // $montantAbonnement -= $montantReduction
+
+
 
             ?>
 
                 <li class="prices__item">
                     <span class="prices__item-desc"><?php echo $age; ?> ans</span> 
                     <span class="prices__item-value"><?php echo $montant; ?> &euro;</span>
+                    <span class="prices__item-value"><?php echo $montantAbonnementAvecReduction; ?> &euro; au lieu <?= $montantAbonnement ?> €</span>
                 </li>
 
             <?php } ?>
