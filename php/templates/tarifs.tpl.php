@@ -55,35 +55,33 @@
     // On stocke aussi l'age du capitaine
     $age = 43;
 
-    // On crée une variable permettant de stocker le montant qu'il va payer
-    $montant = 0;
+    // // On crée une variable permettant de stocker le montant qu'il va payer
+    // $montant = 0;
     
-    // On peut utiliser ici les variables $tarifEnfant, $tarifReduit, $tarifPlein, $montant et $age
+    // // On peut utiliser ici les variables $tarifEnfant, $tarifReduit, $tarifPlein, $montant et $age
 
-    // On peut commencer par vérifier si on a moins de 14. Si on a moins de 14 ans alors on a le tarif enfant et on peut arreter les vérifications ici.
-    if ($age < 14) {
+    // // On peut commencer par vérifier si on a moins de 14. Si on a moins de 14 ans alors on a le tarif enfant et on peut arreter les vérifications ici.
+    // if ($age < 14) {
 
-        $montant = $tarifEnfant;
+    //   $montant = $tarifEnfant;
 
-    }
-
-
-    // Sinon, si on a plus de 14, alors vérifie à quel autre tarif on a le droit
-    // si on a moins de 16 ans OU plus de 60, alors on a le tarif réduit
-    else if ( $age < 16 || $age > 60) {
-
-        $montant = $tarifReduit;
-
-    }
-
-    // Sinon, dans tous les autres cas, j'ai le tarif plein
-    else {
-
-        $montant = $tarifPlein;
-
-    }
+    // }
 
 
+    // // Sinon, si on a plus de 14, alors vérifie à quel autre tarif on a le droit
+    // // si on a moins de 16 ans OU plus de 60, alors on a le tarif réduit
+    // else if ( $age < 16 || $age > 60) {
+
+    //   $montant = $tarifReduit;
+
+    // }
+
+    // // Sinon, dans tous les autres cas, j'ai le tarif plein
+    // else {
+
+    //   $montant = $tarifPlein;
+
+    // }
 
 
     ?>
@@ -98,7 +96,7 @@
         </h3>
         <ul>
           <li class="prices__item">
-            <span class="prices__item-desc"><?php echo $age; ?> ans</span> <span class="prices__item-value"><?php echo  $montant; ?> &euro;</span>
+            <span class="prices__item-desc"><?php echo $age; ?> ans</span> <span class="prices__item-value"><?php echo  calculPlaceCinema($age); ?> &euro;</span>
           </li>
         </ul>
       </div>
@@ -126,20 +124,23 @@
             // La troisième indique ce que PHP doit faire après chaque itération (tour de boucle)
             for( $age = 1 ; $age < 100 ; $age++) { 
                 
-                // Pour chaque age, on remet le montant a zero.
-                $montant = 0;
+                // // Pour chaque age, on remet le montant a zero.
+                // $montant = 0;
     
-                // Ensuite, on recalcule ce montant selon la variable $age de notre boucle
-                if ($age < 14) {
-                    $montant = $tarifEnfant;
-                }
-                else if ( $age < 16 || $age > 60) {
-                    $montant = $tarifReduit;
-                }
-                else {
-                    $montant = $tarifPlein;
-                }
-                
+                // // Ensuite, on recalcule ce montant selon la variable $age de notre boucle
+                // if ($age < 14) {
+                //   $montant = $tarifEnfant;
+                // }
+                // else if ( $age < 16 || $age > 60) {
+                //   $montant = $tarifReduit;
+                // }
+                // else {
+                //   $montant = $tarifPlein;
+                // }
+
+                // Maintenant on délègue le calcul du montant d'une place à la fonction calculPlaceCinema()
+                $montant = calculPlaceCinema($age);
+              
                 // On calcule le montant de l'abonnement avant réduction : prix de la place * 5
                 $montantAbonnement = $montant * 5;
                 // Pour calculer la réduction, on doit d'abord vérifier si on est sur un client de moins de 25 ans

@@ -1,5 +1,8 @@
 <?php
 
+    // Sur cette page, on va avoir besoin de nos fonctions propres au projet. Donc on inclus le fichier qui les contient
+    include "inc/functions.php";
+
     //Données de la page préparées avant d'appeler les templates
     // Etape 1 : on stocke les tarifs des places
     $tarifPlein = 8.3;
