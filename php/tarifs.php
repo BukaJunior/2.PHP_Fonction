@@ -1,5 +1,11 @@
 <?php
     include "templates/header.tpl.php";
+
+    // On stock dans des variables les tarifs
+    $tarifPlein = 8.3;
+    $tarifReduit = 6.8;
+    $tarifEnfant = 4.5;
+
 ?>
 
 <h2 class="page__title">Tarifs</h2>
@@ -50,6 +56,26 @@
       </div>
     </section>
 
+    <?php
+
+      // On stock dans une variable l'âge du capitaine
+      $age = 43;
+
+      // On stock dans une variable le montant à payer
+      $montant = 0;
+
+      // On peut utiliser ici les variables $tarifEnfant, $tarifReduit, $tarifPlein, $montant et $age
+      if ($age <=14) {
+          $montant = $tarifEnfant;
+      } else if ($age >= 60 || $age <=16) {
+          $montant = $tarifReduit;
+      }
+      else {
+          $montant = $tarifPlein;
+      }
+
+    ?>
+
     <section>
       <h2 class="page__title">Tarif du capitaine</h2>
 
@@ -59,7 +85,7 @@
         </h3>
         <ul>
           <li class="prices__item">
-            <span class="prices__item-desc">.. ans</span> <span class="prices__item-value">.... &euro;</span>
+            <span class="prices__item-desc"><?php echo $age; ?> ans</span> <span class="prices__item-value"><?php echo $montant; ?> &euro;</span>
           </li>
         </ul>
       </div>
@@ -75,16 +101,46 @@
             <span class="prices__item-desc">Age</span> <span class="prices__item-value">Tarif unitaire</span>
           </h3>
           <ul>
-            <li class="prices__item">
-              <span class="prices__item-desc">.. ans</span> <span class="prices__item-value">.... &euro;</span>
-            </li>
-            <li class="prices__item">
-              <span class="prices__item-desc">.. ans</span> <span class="prices__item-value">.... &euro;</span>
-            </li>
+
+          <?php
+
+            for ($age=1; $age < 100 ; $age++) {
+              
+              // Pour chaque âge, on réinitialise le montant à 0
+              $montant = 0;
+
+              // Ensuite on recalcul ce montant selon la variable $age de notre boucle
+              if ($age <=14) {
+                  $montant = $tarifEnfant;
+              } else if ($age >= 60 || $age <=16) {
+                  $montant = $tarifReduit;
+              }
+              else {
+                  $montant = $tarifPlein;
+              }
+              
+            ?>
+
+              <li class="prices__item">
+                <span class="prices__item-desc"><?php echo $age ?> ans</span> <span class="prices__item-value"><?php echo $montant ?> &euro;</span>
+              </li>
+            <?php } ?> 
           </ul>
         </div>
       </div>
 
 <?php
     include "templates/footer.tpl.php";
+?>
+
+<?php 
+
+      $compteurDeCoucou = 0;
+
+      while ($compteurDeCoucou < 10) {
+        echo "Coucou ! <br>";
+        // Si on oublie d'incrémenter la variable, la boucle sera infinie
+        $compteurDeCoucou++;
+      }
+
 ?>
