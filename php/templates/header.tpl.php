@@ -29,7 +29,7 @@
             <a href="index.php">Accueil</a>
           </li>
           <li class="header__menu-item">
-            <a href="#">En salle</a>
+            <a href="ensalle.php">En salle</a>
           </li>
           <li class="header__menu-item">
             <a href="tarifs.php">Tarifs</a>
