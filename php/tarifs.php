@@ -6,6 +6,39 @@
     $tarifReduit = 6.8;
     $tarifEnfant = 4.5;
 
+    $extras = [
+      [
+        'Popcorn',
+        'L',
+        2.9
+      ],
+      [
+        'Popcorn',
+        'XL',
+        4
+      ],
+      [
+        'Chips',
+        '50g',
+        2.5
+      ],
+      [
+        'M&M\'s',
+        '100g',
+        4
+      ],
+      [
+        'Soda',
+        '33cl',
+        3.2
+      ],
+      [
+        'Evian',
+        '33cl',
+        3
+      ]
+    ];
+
 ?>
 
 <h2 class="page__title">Tarifs</h2>
@@ -128,19 +161,42 @@
           </ul>
         </div>
       </div>
+    </section>
+
+    <section>
+      <h2 class="page__title">Consommation</h2>
+      <div class="prices">
+        <div class="prices__list">
+          <h3 class="prices__list-title">
+            <span class="prices__item-desc">Article</span>
+            <span class="prices__item-desc">Quantité</span>
+            <span class="prices__item-value">Tarif unitaire</span>
+          </h3>
+
+          <ul>
+
+            <?php
+              for ($index = 0; $index <= 5 ; $index++) : ?>
+
+                <li class="prices__item">
+                  <?php $conso = $extras[$index]; ?>
+                  <span class="prices__item-desc"><?= $conso[0] ?></span>
+                  <span class="prices__item-desc"><?= $conso[1] ?></span>
+                  <span class="prices__item-value"><?= $conso[2] ?> &euro;</span>
+                </li>
+
+            <?php endfor; ?>
+          </ul>
+        </div>
+      </div>
+
+      <ul>
+        <li>
+            
+        </li>
+      </ul>
+    </section>
 
 <?php
     include "templates/footer.tpl.php";
-?>
-
-<?php 
-
-      $compteurDeCoucou = 0;
-
-      while ($compteurDeCoucou < 10) {
-        echo "Coucou ! <br>";
-        // Si on oublie d'incrémenter la variable, la boucle sera infinie
-        $compteurDeCoucou++;
-      }
-
 ?>

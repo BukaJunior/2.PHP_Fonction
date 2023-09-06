@@ -12,6 +12,13 @@
         "Avatar 5", // 3
         "Avatar 6", // 4
     ];
+
+    $rooms = [
+        'Athéna',
+        'Dyonisos',
+        'Hadès',
+        'Zeus'
+    ];
 ?>
 
 <ul>
@@ -23,25 +30,15 @@
     <?php } ?>    
 </ul>
 
-<h2 class="page__title">Salles</h2>
-
-<?php
-    // [...]
-    $rooms = [
-    'Athéna',
-    'Dyonisos',
-    'Hadès',
-    'Zeus'
-    ];
-?>
+<h2 class="page__title">Liste des Salles</h2>
 
 <ul>
     <?php
-        for ($index = 0; $index <= 3; $index++) { ?>
+        for ($indexRoom = 0; $indexRoom <= 3; $indexRoom++) : ?>
             <li>
-                <?php echo $rooms[$index] ?>
+                <?= $rooms[$indexRoom] ?>
             </li>
-    <?php } ?>
+    <?php endfor; ?>
 </ul>
 
 
