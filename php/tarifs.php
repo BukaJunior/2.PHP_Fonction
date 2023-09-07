@@ -131,7 +131,9 @@
       <div class="prices">
         <div class="prices__list">
           <h3 class="prices__list-title">
-            <span class="prices__item-desc">Age</span> <span class="prices__item-value">Tarif unitaire</span>
+            <span class="prices__item-desc">Age</span>
+            <span class="prices__item-value">Tarif unitaire</span>
+            <span class="prices__item-value">Abonnement</span>
           </h3>
           <ul>
 
@@ -151,11 +153,25 @@
               else {
                   $montant = $tarifPlein;
               }
+
+              $montantAbonnement = $montant * 5;
+
+              if ($age <= 25) {
+                $pourcentageReduction = 20;
+              } else {
+                $pourcentageReduction = 10;
+              }
+
+              $montantReduction = $montantAbonnement * $pourcentageReduction / 100;
+
+              $montantAbonnement = $montantAbonnement - $montantReduction;
               
             ?>
 
               <li class="prices__item">
-                <span class="prices__item-desc"><?php echo $age ?> ans</span> <span class="prices__item-value"><?php echo $montant ?> &euro;</span>
+                <span class="prices__item-desc"><?php echo $age ?> ans</span>
+                <span class="prices__item-value"><?php echo $montant ?> &euro;</span>
+                <span class="prices__item-value"><?php echo $montantAbonnement ?> &euro;</span>
               </li>
             <?php } ?> 
           </ul>
