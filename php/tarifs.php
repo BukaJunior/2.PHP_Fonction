@@ -61,9 +61,12 @@
             A l'unité
           </h3>
           <ul>
-            <li class="prices__item">
-              <span class="prices__item-desc">Nom du tarif</span> <span class="prices__item-value">Prix du tarif &euro;</span>
-            </li>
+            <?php
+              foreach ($tarifs as $tarifName => $tarifValue) : ?>
+                <li class="prices__item">
+                  <span class="prices__item-desc"><?= $tarifName ?></span> <span class="prices__item-value"><?= $tarifValue ?> &euro;</span>
+                </li>
+            <?php endforeach; ?>
           </ul>
         </div>
 
