@@ -51,8 +51,8 @@
     // var_dump($tarifs);
 
     $abonnement = [
-      '5 places' => 10,
-      '5 places -25ans' => 20
+      '5 places' => "-10%",
+      '5 places -25ans' => "-20%"
     ];
 ?>
 
@@ -78,12 +78,13 @@
             Abonnement
           </h3>
           <ul>
-            <li class="prices__item">
-              <span class="prices__item-desc">5 places</span> <span class="prices__item-value">-10%</span>
-            </li>
-            <li class="prices__item">
-              <span class="prices__item-desc">5 places -25ans </span> <span class="prices__item-value">-20%</span>
-            </li>
+            <?php
+              foreach ($abonnement as $abonnementName => $abonnementValue) : ?>
+                <li class="prices__item">
+                  <span class="prices__item-desc"><?= $abonnementName ?></span>
+                  <span class="prices__item-value"><?= $abonnementValue ?></span>
+                </li>
+            <?php endforeach; ?>
           </ul>
         </div>
       </div>
