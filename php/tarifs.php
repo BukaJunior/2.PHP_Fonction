@@ -40,6 +40,17 @@
       ]
     ];
 
+    // Tableau associatif des noms des tarifs et leur valeur
+
+    $tarifs = [
+      'Tarif Plein' => 8.3,
+      'Tarif Réduit' => 6.8,
+      'Tarif Enfant' => 4.5,
+      'Supplément 3D' => 1
+    ];
+
+    // var_dump($tarifs);
+
 ?>
 
 <h2 class="page__title">Tarifs</h2>
@@ -51,16 +62,7 @@
           </h3>
           <ul>
             <li class="prices__item">
-              <span class="prices__item-desc">Tarif Plein</span> <span class="prices__item-value">8,30 &euro;</span>
-            </li>
-            <li class="prices__item">
-              <span class="prices__item-desc">Tarif Réduit</span> <span class="prices__item-value">6,80 &euro;</span>
-            </li>
-            <li class="prices__item">
-              <span class="prices__item-desc">Tarif Enfant</span> <span class="prices__item-value">4,50 &euro;</span>
-            </li>
-            <li class="prices__item">
-              <span class="prices__item-desc">Supplément 3D</span> <span class="prices__item-value">1,00 &euro;</span>
+              <span class="prices__item-desc">Nom du tarif</span> <span class="prices__item-value">Prix du tarif &euro;</span>
             </li>
           </ul>
         </div>
