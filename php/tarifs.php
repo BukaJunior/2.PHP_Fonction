@@ -48,9 +48,12 @@
       'Tarif Enfant' => 4.5,
       'Supplément 3D' => 1
     ];
-
     // var_dump($tarifs);
 
+    $abonnement = [
+      '5 places' => 10,
+      '5 places -25ans' => 20
+    ];
 ?>
 
 <h2 class="page__title">Tarifs</h2>
