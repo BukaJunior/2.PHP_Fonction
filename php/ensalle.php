@@ -6,11 +6,22 @@
 
 <?php
     $films = [
-        "Avatar 2", // 0
-        "Avatar 3", // 1
-        "Avatar 4", // 2
-        "Avatar 5", // 3
-        "Avatar 6", // 4
+        "Avatar 1", // 0
+        "Avatar 2", // 1
+        "Avatar 3", // 2
+        "Avatar 4", // 3
+        "Avatar 5", // 4
+        "Avatar 6", // 5
+        "Avatar 7", // 6
+        "Avatar 8", // 7
+        "Avatar 9", // 8
+        "Avatar 10", // 9
+        "Avatar 11", // 10
+        "Avatar 12", // 11
+        "Avatar 13", // 12
+        "Avatar 14", // 13
+        "Avatar 15", // 14
+        
     ];
 
     $rooms = [
@@ -23,7 +34,7 @@
 
 <ul>
     <?php 
-        for ($index = 0; $index <= 5; $index++) { ?>
+        for ($index = 0; $index < count($films); $index++) { ?>
             <li class="film">
                 <?php echo $films[$index] ?>
             </li>
