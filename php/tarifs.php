@@ -67,7 +67,7 @@
             <?php
               foreach ($tarifs as $tarifName => $tarifValue) : ?>
                 <li class="prices__item">
-                  <span class="prices__item-desc"><?= $tarifName ?></span> <span class="prices__item-value"><?= $tarifValue ?> &euro;</span>
+                  <span class="prices__item-desc"><?= $tarifName ?></span> <span class="prices__item-value"><?= number_format($tarifValue, 2, ',', ' '); ?> &euro;</span>
                 </li>
             <?php endforeach; ?>
           </ul>
