@@ -6,6 +6,7 @@
     $tarifReduit = 6.8;
     $tarifEnfant = 4.5;
 
+    // On stock dans un tableau les extras (consommations)
     $extras = [
       [
         'Popcorn',
@@ -157,17 +158,19 @@
               // On calcule le montant de l'abonnement
               $montantAbonnement = $montant * 5;
 
+              // Si l'age est inférieur à 25 ans, on applique une réduction de 20% sinon on applique une réduction de 10%
               if ($age <= 25) {
                 $pourcentageReduction = 20;
               } else {
                 $pourcentageReduction = 10;
               }
               
-              // On calcule le montant de la réduction
+              // On calcule le montant de la réduction, avec la règle des 3 pour trouver un pourcentage
               $montantReduction = $montantAbonnement * $pourcentageReduction / 100;
-              
+
+
               // On calcule le montant de l'abonnement
-              $montantAbonnement = $montantAbonnement - $montantReduction;
+              $montantAbonnement -= $montantReduction;
               
             ?>
 
