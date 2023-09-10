@@ -1,10 +1,4 @@
 <?php
-    include "templates/header.tpl.php";
-?>
-
-<h2 class="page__title">En salle en ce moment</h2>
-
-<?php
     $films = [
         "Avatar 1", // 0
         "Avatar 2", // 1
@@ -32,27 +26,8 @@
     ];
 ?>
 
-<ul>
-    <?php 
-        for ($index = 0; $index < count($films); $index++) { ?>
-            <li class="film">
-                <?php echo $films[$index] ?>
-            </li>
-    <?php } ?>    
-</ul>
-
-<h2 class="page__title">Liste des Salles</h2>
-
-<ul>
-    <?php
-        for ($indexRoom = 0; $indexRoom <= 3; $indexRoom++) : ?>
-            <li>
-                <?= $rooms[$indexRoom] ?>
-            </li>
-    <?php endfor; ?>
-</ul>
 
 
-<?php
-    include "templates/footer.tpl.php";
-?>
+<?php include "templates/header.tpl.php"; ?>
+<?php include "templates/ensalle.tpl.php"; ?>
+<?php include "templates/footer.tpl.php"; ?>
