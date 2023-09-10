@@ -154,6 +154,7 @@
                   $montant = $tarifPlein;
               }
 
+              // On calcule le montant de l'abonnement
               $montantAbonnement = $montant * 5;
 
               if ($age <= 25) {
@@ -161,9 +162,11 @@
               } else {
                 $pourcentageReduction = 10;
               }
-
+              
+              // On calcule le montant de la réduction
               $montantReduction = $montantAbonnement * $pourcentageReduction / 100;
-
+              
+              // On calcule le montant de l'abonnement
               $montantAbonnement = $montantAbonnement - $montantReduction;
               
             ?>
