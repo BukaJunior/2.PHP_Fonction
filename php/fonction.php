@@ -9,5 +9,19 @@ function sayHello() {
 // ! Il faut toujours mettre les parenthèse après le nom de la fonction, même si elle ne prend pas de paramètre !
 sayHello();
 
+// ------------------------------------------------
+
+// Fonction sont comme des BOITES HERMETIQUES
+function additionne() {
+    $calcul = 2 + 2;
+    
+}
+
+additionne();
+// Affiche NULL car la variable $calcul n'est pas définie en dehors de la fonction DONC elle n'existe pas en dehors de la fonction.
+
+var_dump($calcul); 
+
+
 
 ?>
