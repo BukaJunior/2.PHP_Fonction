@@ -1,24 +1,13 @@
 <?php
 
-$tableau = [
-    'test1',
-    'test2',
-    'test3',
-];
+// Déclaration d'une fonction (sans paramètre), on décrit le fonctionnement de celle-ci dans les accolades)
+function sayHello() {
+    echo "Bonjour";
+}
 
-// Fonction native de PHP, permet de compter le nombre d'éléments dans un tableau
-count($tableau); // 3
-
-// On va récuperer cet information dans une variable, pour pouvoir l'utiliser plus tard.
-$resultat = count($tableau);
-
-// On peut ensuite afficher le résultat
-echo $resultat; // 3
-
-
-
-
-
+// Appel de la fonction, on l'appelle par son nom suivi des parenthèses, on peut l'appeler autant de fois que l'on veut !
+// ! Il faut toujours mettre les parenthèse après le nom de la fonction, même si elle ne prend pas de paramètre !
+sayHello();
 
 
 ?>
