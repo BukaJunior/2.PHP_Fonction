@@ -12,15 +12,25 @@ sayHello();
 // ------------------------------------------------
 
 // Fonction sont comme des BOITES HERMETIQUES
+
 function additionne() {
     $calcul = 2 + 2;
+
+    // On peut retourner une valeur avec le mot clé return, pour réutiliser le résultat de la fonction à l'extérieur de celle-ci.
+    return $calcul;
+
     
 }
-
-additionne();
 // Affiche NULL car la variable $calcul n'est pas définie en dehors de la fonction DONC elle n'existe pas en dehors de la fonction.
+additionne();
 
-var_dump($calcul); 
+// Pour récupérer la valeur retourné par une fonction, on place une VARIABLE devant L'EXECUTION.
+// On aurait pu aussi placer un écho devant pour afficher le résultat de la fonction directement.
+
+$resultat = additionne();
+
+
+
 
 
 
