@@ -41,16 +41,31 @@ $resultat = additionneDeuxEtDeux();
 // On peut passer des paramètres à une fonction, pour lui donner des informations dont elle a besoin pour fonctionner.
 
 // Pour mettre un parametre facultatif on met un = 0, car 0 est une valeur par défaut.
+
 function additionne( $nombre1, $nombre2, $nombre3 = 0) {
 
     // On peut utiliser les paramètres dans la fonction, comme si c'était des variables.
-    $calcul = $nombre1 + $nombre2;
+    $calcul = $nombre1 + $nombre2 + $nombre3;
 
     return $calcul;
 }
 
 // On peut passer des VARIABLES en paramètre, ou directement des VALEURS.
 echo additionne(5, 2);
+echo additionne(5, 2, 3);
+
+// ------------------------------------------------
+
+// ! 4. FONCTION AVEC PARAMETRE FACULTATIF
+
+// On peut mettre des paramètres facultatifs, en leur donnant une valeur par défaut.
+function direBonjour($prenom = "John") {
+
+    echo "Bonjour $prenom, comment ça va ?";
+}
+
+direBonjour("Justine");
+direBonjour();
 
 
 
