@@ -46,18 +46,18 @@
       // On stock dans une variable l'âge du capitaine
       $age = 43;
 
-      // On stock dans une variable le montant à payer
-      $montant = 0;
+      // // On stock dans une variable le montant à payer
+      // $montant = 0;
 
-      // On peut utiliser ici les variables $tarifEnfant, $tarifReduit, $tarifPlein, $montant et $age
-      if ($age <=14) {
-          $montant = $tarifEnfant;
-      } else if ($age >= 60 || $age <=16) {
-          $montant = $tarifReduit;
-      }
-      else {
-          $montant = $tarifPlein;
-      }
+      // // On peut utiliser ici les variables $tarifEnfant, $tarifReduit, $tarifPlein, $montant et $age
+      // if ($age <=14) {
+      //     $montant = $tarifEnfant;
+      // } else if ($age >= 60 || $age <=16) {
+      //     $montant = $tarifReduit;
+      // }
+      // else {
+      //     $montant = $tarifPlein;
+      // }
 
     ?>
 

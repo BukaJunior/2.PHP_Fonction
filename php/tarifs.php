@@ -1,5 +1,9 @@
 <?php
 
+    // On inclus le fichier ou se trouve notre fonction pour l'utiliser ici.
+    include "inc/function.php";
+
+
     // On stock dans des variables les tarifs
     $tarifPlein = 8.3;
     $tarifReduit = 6.8;
