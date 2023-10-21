@@ -67,8 +67,28 @@ function direBonjour($prenom = "John") {
 direBonjour("Justine");
 direBonjour();
 
+// EXERCICE : 
 
+// CONSIGNE: Créer une fonction calculPlaceDeCinema() qui calculerait le montant d'une place de cinéma pour une personne en fonction de l'âge du client.
 
+// Cette fonction doit reçevoir l'age d'une personne.
 
+// Et elle doit renvoyer le montant de la place pour cet age.
+
+function calculPlaceDeCinema($age) {
+    
+    if ($age <= 14) {
+        $montant = 4.5;
+        return $montant;
+    } elseif ($age <= 16 || $age > 60) {
+        $montant = 6.80;
+        return $montant;
+    } else {
+        $montant = 8.30;
+        return $montant;
+    }
+}
+
+echo calculPlaceDeCinema(65);
 
 ?>
