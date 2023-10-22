@@ -6,7 +6,7 @@
  * @param int $age age de la personne
  * @return float montant en euros renvoyer
  */
-function calculPlaceDeCinema($age) {
+function calculPlaceDeCinema( int $age) {
     
     $montant = 0;
 
