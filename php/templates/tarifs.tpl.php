@@ -70,7 +70,7 @@
         </h3>
         <ul>
           <li class="prices__item">
-            <span class="prices__item-desc"><?php echo $age; ?> ans</span> <span class="prices__item-value"><?php echo $montant; ?> &euro;</span>
+            <span class="prices__item-desc"><?php echo $age; ?> ans</span> <span class="prices__item-value"><?php echo calculPlaceDeCinema($age); ?> &euro;</span>
           </li>
         </ul>
       </div>
@@ -93,18 +93,21 @@
 
             for ($age=1; $age < 100 ; $age++) {
               
-              // Pour chaque âge, on réinitialise le montant à 0
-              $montant = 0;
+              // // Pour chaque âge, on réinitialise le montant à 0
+              // $montant = 0;
 
-              // Ensuite on recalcul ce montant selon la variable $age de notre boucle
-              if ($age <=14) {
-                  $montant = $tarifEnfant;
-              } else if ($age >= 60 || $age <=16) {
-                  $montant = $tarifReduit;
-              }
-              else {
-                  $montant = $tarifPlein;
-              }
+              // // Ensuite on recalcul ce montant selon la variable $age de notre boucle
+              // if ($age <=14) {
+              //     $montant = $tarifEnfant;
+              // } else if ($age >= 60 || $age <=16) {
+              //     $montant = $tarifReduit;
+              // }
+              // else {
+              //     $montant = $tarifPlein;
+              // }
+              
+              // On délégue le calcul du montant d'une place à la fonction calculPlaceCinema.
+              $montant = calculPlaceDeCinema($age);
 
               // On calcule le montant de l'abonnement
               $montantAbonnement = $montant * 5;

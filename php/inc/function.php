@@ -28,6 +28,6 @@ function calculPlaceDeCinema($age) {
     return $montant;
 }
 
-calculPlaceDeCinema();
+calculPlaceDeCinema(5);
 
 ?>
